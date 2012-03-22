@@ -38,15 +38,39 @@ But, of course, those rules and strong suggestions are what allows things to be 
 
 ### Steering, Better
 
-The golden path, as it's known, has some bumps. Some of these have been around since 2005. Let's discuss a few ways that we tweak what we do to promote consistency, get closer to object-oriented ideals, while making development happier.
+The golden path, as it's known, has some bumps. Some of these have been around since 2005. Let's discuss a few ways that we tweak what we do to promote consistency, get closer to object-oriented ideals, while making developing applications a more joyful experience.
+
+### This Ain't No Router Rewrite
+
+The first component of your application encountered when responding to a request is the router. The router, at this point, has been rewritten about 82 times. We have made a lot of progress here.
+
+When you create a new application, the routes.rb has *52* lines of comments. Attempting to embed a psuedo-exhaustive list of the API features is unnecessary and detracts from the golden path.
+
+Here's what those comments should show:
+	* resource :article
+	* root :to => "articles#index"
+	* Learn more: http://guides.rubyonrails.org/routing.html
+
+Done.
+
+### But Maybe It Is
+
+I generally like the syntax for the routes file itself. But I don't like explaining the routing helpers. Here's what I tell people:
+
+* run `rake routes`
+
 
 ### Conclusion Ideas
+
+* System
+	* Rake instead of Rails
 
 * Models
 	* attr_accessible in comments
 	* attr_accessible by default
 	* ActiveRecord as a module
 		* Make private?
+	* Persistence folder
 
 * Controllers
 	* Composition over Inheritance
